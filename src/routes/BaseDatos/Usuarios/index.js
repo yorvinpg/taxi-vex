@@ -4,6 +4,7 @@ import { notification } from "antd";
 import { httpClient } from "../../../util/Api";
 import { AgregarUsuario } from "./agregar";
 import { ListarUsuario } from "./listar";
+import { elementType } from "prop-types";
 
 const Usuarios = () => {
 
@@ -24,7 +25,9 @@ const Usuarios = () => {
         try {
             setMostrarAlerta(false);
             const resp = await httpClient.post(`/listar/getUsu`, {});
-            console.log('listarUsu:',resp);
+            resp.data.data.map((element)=>{
+              element.key=element.idUsuario;
+            });
             setState({
                 loading: false,
                 data: resp.data.data,
@@ -48,7 +51,7 @@ const Usuarios = () => {
 
     const deshabilitarUsuario = async (id) => {
         try {
-            const resp = await httpClient.post("/deleteUsuario", id);
+            const resp = await httpClient.post("/delete/delUsu", id);
             console.log("Deshabilitar:", resp);
         } catch (error) {
             console.log(error);

@@ -67,6 +67,12 @@ const SidebarContent = ({ sidebarCollapsed, setSidebarCollapsed }) => {
                   <span>Usuarios</span>
                 </Link>
               </Menu.Item>
+              <Menu.Item key="baseDatos/conductores">
+                <Link to="/baseDatos/conductores">
+                  <i className="icon icon-chart-composed" />
+                  <span>Conductores</span>
+                </Link>
+              </Menu.Item>
             </SubMenu>
 
           </Menu>
