@@ -56,21 +56,33 @@ const SidebarContent = ({ sidebarCollapsed, setSidebarCollapsed }) => {
               title={
                 <span>
                   {/* {" "} */}
-                  <i className="icon icon-folder" />
-                  <span>Base de Datos</span>
+                  <i className="icon icon-profile2" />
+                  <span>USUARIOS</span>
                 </span>
               }
             >
               <Menu.Item key="baseDatos/usuarios">
                 <Link to="/baseDatos/usuarios">
                   <i className="icon icon-user-o" />
-                  <span>Usuarios</span>
+                  <span>Pasajeros</span>
                 </Link>
               </Menu.Item>
               <Menu.Item key="baseDatos/conductores">
                 <Link to="/baseDatos/conductores">
                   <i className="icon icon-chart-composed" />
                   <span>Conductores</span>
+                </Link>
+              </Menu.Item>
+              <Menu.Item key="baseDatos/conductores">
+                <Link to="/baseDatos/conductores">
+                  <i className="icon icon-auth-screen" />
+                  <span>Pendientes</span>
+                </Link>
+              </Menu.Item>
+              <Menu.Item key="baseDatos/conductores">
+                <Link to="/baseDatos/conductores">
+                  <i className="icon icon-close-circle" />
+                  <span>Rechazados</span>
                 </Link>
               </Menu.Item>
             </SubMenu>
