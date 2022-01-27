@@ -163,7 +163,7 @@ export const ListarUsuario = ({
                 justifyContent: "start",
               }}
             >
-              <h2 style={{ margin: 0, padding: 0 }}>Usuarios</h2>
+              <h2 style={{ margin: 0, padding: 0 }}>Pendientes</h2>
             </Col>
             {/*//*Switch inactivos
                          <Col

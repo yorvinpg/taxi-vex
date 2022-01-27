@@ -35,7 +35,6 @@ export const AgregarUsuario = ({
         data.append('apellido', estado.apellido);
         data.append('genero', estado.genero);
         data.append('estado', estado.estad);
-        data.append('ciudad', estado.ciuda);
         data.append('fechaNacimiento', estado.fechaNacimiento);
         data.append('correo', estado.correo);
         data.append('imagen', imagen);
@@ -59,8 +58,7 @@ export const AgregarUsuario = ({
         data.append('nombre', estado.nombre);
         data.append('apellido', estado.apellido);
         data.append('genero', estado.genero);
-        data.append('estado',estado.estad);
-        data.append('ciudad',estado.ciuda);
+        data.append('estado', estado.estad);
         data.append('fechaNacimiento', estado.fechaNacimiento);
         data.append('correo', estado.correo);
         data.append('imagen', imagen);
@@ -110,12 +108,6 @@ export const AgregarUsuario = ({
     formRef.current.setFieldsValue({ estad: value });
   };
 
-  const handleChangeCiudad = (value) => {
-    setEstado({ ...estado, ciuda: value });
-    formRef.current.setFieldsValue({ ciuda: value });
-  };
-
-
   const handleChangeFechaNacimiento = (e) => {
     const fechaNacimiento = e.format("YYYY-MM-DD");
     setEstado({ ...estado, fechaNacimiento: fechaNacimiento });
@@ -145,7 +137,6 @@ export const AgregarUsuario = ({
       editar.fechaN = Moment(editar.fechaNacimiento, "YYYY/MM/DD");
       editar.genero = editar.generoU;
       editar.estad = editar.estado;
-      editar.ciuda = editar.ciudad;
       editar.correo = editar.correoElectronico;
       editar.imagen = editar.urlFoto;
       formRef.current.setFieldsValue({ ...editar });
@@ -311,18 +302,9 @@ export const AgregarUsuario = ({
               </Select>
             </Form.Item>
           </Col>
-          <Col md={10} sm={8} xs={24}>
-            <Form.Item name="ciuda" label="Ciudad">
-              <Input
-                type="text"
-                placeholder="Ingrese Ciudad"
-                onChange={handleChangeCiudad}
-              />
-            </Form.Item>
-          </Col>
 
           <Col lg={8} md={12} sm={12} xs={24}>
-            <Form.Item name="estad" label="Estado">
+            <Form.Item name="estad" label="estado">
               <Select
                 showSearch
                 placeholder="Seleccione"

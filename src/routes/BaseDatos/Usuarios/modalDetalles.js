@@ -27,7 +27,7 @@ const ModalDetalles = ({ abrirModal, setAbrirModal, datosModal }) => {
       >
         <Row style={{ flexDirection: "row", padding: "15px 0 15px 0" }}>
           <Col lg={18}>
-            <h2 style={{ fontWeight: "bold" }}>Activo</h2>
+            <h2 style={{ fontWeight: "bold" }}>CLIENTE</h2>
             <Row>
               <Col lg={8} md={12} sm={12} xs={24}>
                 <div style={{ width: "100%" }}>

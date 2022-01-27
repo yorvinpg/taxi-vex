@@ -49,7 +49,6 @@ const SidebarContent = ({ sidebarCollapsed, setSidebarCollapsed }) => {
                 <span>Inicio</span>
               </Link>
             </Menu.Item>
-
             <SubMenu
               key="baseDatos"
               popupClassName={getNoHeaderClass(navStyle)}
@@ -73,20 +72,75 @@ const SidebarContent = ({ sidebarCollapsed, setSidebarCollapsed }) => {
                   <span>Conductores</span>
                 </Link>
               </Menu.Item>
-              <Menu.Item key="baseDatos/conductores">
-                <Link to="/baseDatos/conductores">
+              <Menu.Item key="baseDatos/pendientes">
+                <Link to="/baseDatos/pendientes">
                   <i className="icon icon-auth-screen" />
                   <span>Pendientes</span>
                 </Link>
               </Menu.Item>
-              <Menu.Item key="baseDatos/conductores">
-                <Link to="/baseDatos/conductores">
+              <Menu.Item key="baseDatos/rechazados">
+                <Link to="/baseDatos/rechazados">
                   <i className="icon icon-close-circle" />
                   <span>Rechazados</span>
                 </Link>
               </Menu.Item>
             </SubMenu>
 
+            <SubMenu
+              key="Empresas"
+              popupClassName={getNoHeaderClass(navStyle)}
+              title={
+                <span>
+                  {/* {" "} */}
+                  <i className="icon icon-company" />
+                  <span>EMPRESAS</span>
+                </span>
+              }
+            >
+              <Menu.Item key="Empresas/Registros">
+                <Link to="/Empresas/Registros">
+                  <i className="icon icon-editor" />
+                  <span>Registros</span>
+                </Link>
+              </Menu.Item>
+            </SubMenu>
+
+            <SubMenu
+              key="Configuraciones"
+              popupClassName={getNoHeaderClass(navStyle)}
+              title={
+                <span>
+                  {/* {" "} */}
+                  <i className="icon icon-setting" />
+                  <span>Configuraciones</span>
+                </span>
+              }
+            >
+              <Menu.Item key="Configuraciones/Registro">
+                <Link to="/Configuraciones/Registro">
+                  <i className="icon icon-editor" />
+                  <span>Registros</span>
+                </Link>
+              </Menu.Item>
+            </SubMenu>
+            <SubMenu
+              key="Pago"
+              popupClassName={getNoHeaderClass(navStyle)}
+              title={
+                <span>
+                  {/* {" "} */}
+                  <i className="icon icon-card" />
+                  <span>Forma de Pago</span>
+                </span>
+              }
+            >
+              <Menu.Item key="Pago/Registro">
+                <Link to="/Pago/Registro">
+                  <i className="icon icon-editor" />
+                  <span>Registros</span>
+                </Link>
+              </Menu.Item>
+            </SubMenu>
           </Menu>
         </CustomScrollbars>
       </div>

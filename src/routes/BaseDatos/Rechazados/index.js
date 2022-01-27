@@ -1,15 +1,14 @@
+import React, { useCallback, useEffect, useState } from "react";
 import { CheckCircleOutlined } from "@ant-design/icons";
 import { notification } from "antd";
-import React, { useCallback, useEffect, useState } from "react";
 import { httpClient } from "../../../util/Api";
-import AgregarUsuario from "./agregar";
+import { AgregarUsuario } from "./agregar";
 import { ListarUsuario } from "./listar";
+import { elementType } from "prop-types";
 
+const Rechazados = () => {
 
-
-const Conductores = () => {
-
-  const [usuarioActivo, setUsuarioActivo] = useState(true);
+    const [usuarioActivo, setUsuarioActivo] = useState(true);
     const [mostrarVentana, setMostrarVentana] = useState(false);
     const [mostrarAlerta, setMostrarAlerta] = useState(false);
     const [editar, setEditar] = useState(null);
@@ -25,7 +24,7 @@ const Conductores = () => {
         });
         try {
             setMostrarAlerta(false);
-            const resp = await httpClient.post(`/listar/getCond`, {});
+            const resp = await httpClient.post(`/listar/getRech`, {});
             resp.data.data.map((element)=>{
               element.key=element.idUsuario;
             });
@@ -88,7 +87,7 @@ const Conductores = () => {
                 )}
             </div>
         </div>
-  );
+    );
 };
 
-export default Conductores;
+export default Rechazados;
