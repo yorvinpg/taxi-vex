@@ -6,6 +6,7 @@ import CustomScrollbars from "util/CustomScrollbars";
 import SidebarLogo from "./SidebarLogo";
 import UserProfile from "./UserProfile";
 import AppsNavigation from "./AppsNavigation";
+
 import {
   NAV_STYLE_NO_HEADER_EXPANDED_SIDEBAR,
   NAV_STYLE_NO_HEADER_MINI_SIDEBAR,
@@ -33,10 +34,10 @@ const SidebarContent = ({ sidebarCollapsed, setSidebarCollapsed }) => {
     <>
       <SidebarLogo sidebarCollapsed={sidebarCollapsed} setSidebarCollapsed={setSidebarCollapsed} />
       <div className="gx-sidebar-content">
-        <div className={`gx-sidebar-notifications ${getNoHeaderClass(navStyle)}`}>
+        {/* <div className={`gx-sidebar-notifications ${getNoHeaderClass(navStyle)}`}>
           <UserProfile />
           <AppsNavigation />
-        </div>
+        </div> */}
         <CustomScrollbars className="gx-layout-sider-scrollbar">
           <Menu
             defaultOpenKeys={[defaultOpenKeys]}
@@ -124,7 +125,7 @@ const SidebarContent = ({ sidebarCollapsed, setSidebarCollapsed }) => {
               </Menu.Item>
             </SubMenu>
             <SubMenu
-              key="Pago"
+              key="FormaPago"
               popupClassName={getNoHeaderClass(navStyle)}
               title={
                 <span>
@@ -134,8 +135,8 @@ const SidebarContent = ({ sidebarCollapsed, setSidebarCollapsed }) => {
                 </span>
               }
             >
-              <Menu.Item key="Pago/Registro">
-                <Link to="/Pago/Registro">
+              <Menu.Item key="FormaPago/Registros">
+                <Link to="/FormaPago/Registros">
                   <i className="icon icon-editor" />
                   <span>Registros</span>
                 </Link>

@@ -15,6 +15,13 @@ const Usuarios = () => {
     const [state, setState] = useState({
         data: [],
         loading: false,
+        pagination: {
+          current: 1,
+          pageSize: 5,
+          defaultPageSize: 5,
+          showSizeChanger: true,
+          pageSizeOptions: [5, 10, 20],
+        },
     });
 
     const traerDatos = useCallback(async () => {

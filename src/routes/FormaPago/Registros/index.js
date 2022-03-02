@@ -24,12 +24,11 @@ const Registros = () => {
         });
         try {
             setMostrarAlerta(false);
-            const resp = await httpClient.post(`/listar/getConfig`, {});
-            console.log(resp)
-             resp.data.data.map((element)=>{
-               element.key=element.idConfiguracion;
-             });
-
+            const resp = await httpClient.post(`/listar/getPago`, {});
+            console.log(resp);
+            resp.data.data.map((element)=>{
+              element.key=element.idFormaPago;
+            });
             setState({
                 loading: false,
                 data: resp.data.data,

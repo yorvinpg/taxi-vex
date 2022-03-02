@@ -3,7 +3,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 
 import asyncComponent from "util/asyncComponent";
 
-const Pago = ({ match }) => (
+const FormaPago = ({ match }) => (
     <div className="gx-main-content-wrapper">
         <Switch>
             <Redirect exact from={`${match.url}/`} to={`${match.url}/Registros`} />
@@ -12,4 +12,4 @@ const Pago = ({ match }) => (
     </div>
 );
 
-export default Pago;
+export default FormaPago;

@@ -34,14 +34,15 @@ export const AgregarUsuario = ({
         data.append('nombre', estado.nombre);
         data.append('apellido', estado.apellido);
         data.append('genero', estado.genero);
-        data.append('estado', estado.estad);
+        data.append('estad', estado.estad);
         data.append('ciudad', estado.ciuda);
         data.append('fechaNacimiento', estado.fechaNacimiento);
         data.append('correo', estado.correo);
         data.append('imagen', imagen);
-        const resp = await httpClient.post("auth/saveUsu", data);
-        console.log(resp);
-        if (resp.data.success) {
+        console.log(data);
+        const resp = await httpClient.post("editar/setU", data);
+        console.log(resp.data.estado);
+        if (resp.data.estado) {
           message.success('Usuario modificado correctamente');
           traerDatos(pagination, {}, true);
           setMostrarVentana(false);
@@ -145,13 +146,13 @@ export const AgregarUsuario = ({
       editar.fechaN = Moment(editar.fechaNacimiento, "YYYY/MM/DD");
       editar.genero = editar.generoU;
       editar.estad = editar.estado;
-      editar.ciuda = editar.ciudad;
+      editar.ciuda = editar.nameCiudad;
       editar.correo = editar.correoElectronico;
       editar.imagen = editar.urlFoto;
       formRef.current.setFieldsValue({ ...editar });
       setEstado({ ...editar });
       if (editar.urlFoto != null) {
-        setImagenURL(process.env.REACT_APP_URL_BACKEND_IMAGENES + editar.urlFoto);
+        setImagenURL("http://144.91.109.33/backend/public/" + editar.urlFoto);
         setImagen(editar.urlFoto);
       }
     }

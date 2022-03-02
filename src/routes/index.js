@@ -10,7 +10,7 @@ const App = ({ match }) => (
       <Route path={`${match.url}BaseDatos`} component={asyncComponent(() => import('./BaseDatos'))} />
       <Route path={`${match.url}Empresas`} component={asyncComponent(() => import('./Empresas'))} />
       <Route path={`${match.url}Configuraciones`} component={asyncComponent(() => import('./Configuraciones'))} />
-      <Route path={`${match.url}Pago`} component={asyncComponent(() => import('./Pago'))} />
+      <Route path={`${match.url}FormaPago`} component={asyncComponent(() => import('./FormaPago'))} />
     </Switch>
   </div>
 );

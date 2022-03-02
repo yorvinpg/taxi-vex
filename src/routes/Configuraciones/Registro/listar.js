@@ -78,8 +78,8 @@ export const ListarUsuario = ({
       key: "num_solicitudes",
     },
     {
-      title: "Paises",
-      dataIndex: "paises",
+      title: "Pais",
+      dataIndex: "nombrePais",
       key: "paises",
     },
     {
